@@ -16,41 +16,67 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-
+    <style type="text/css">
+    </style>
 </head>
 
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
+
+      <!-- Logo -->
       <a class="navbar-brand" href="#">
         <img src="favicon.ico" alt="Magic the Gathering" width=30>
       </a>
       <span class="navbar-brand">Magic: The Dashboard</span>
 
+      <!-- Collapsable button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
         aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Lefthand items -->
       <div class="collapse navbar-collapse" id="navCollapse">
         <ul class=" navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link" href="https://www.uib.eu/">
-              <img src="assets/img/uib.png" alt="UIB" width>
+              <img src="assets/img/uib.png" alt="UIB" width=30>
             </a>
+
           <li class="nav-item">
-            <a class="nav-link" href="https://scryfall.com/">
-              <img src="assets/img/scryfall.png" alt="API">
+            <a class="nav-link" href="https://github.com/mtgjson/mtgjson">
+              <img src="assets/img/database.png" alt="DATA" width=30>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Zygmut/magic-the-dashboard">
+              <img src="assets/img/github.png" alt="GitHub" width =30>
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Main -->
   <main class="container">
+    <h1 class="magic"> Magic The Gathering</h1>
+    <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";>Érase una vez los Gormitis dominaban el Mundo. Habían gormitis de Tierra, Mar, Bosque, Volcán y Aire.</p>
+
     <div id="barChart" style="width:100%; height:400px;"></div>
+
+    <!-- Information & such -->
+    <div class="mt-4 p-5 bg-secondary text-white rounded">
+      <h1>Magic: The Dashboard</h1>
+      <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll,
+        this navbar remains in its original position and moves with the rest of the page.</p>
+      <a class="btn btn-lg btn-secondary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
+    </div>
   </main>
 
   <!-- Scripts -->
