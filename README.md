@@ -1,1 +1,1 @@
-# Dashboard
+# Magic: The Dashboard
