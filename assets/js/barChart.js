@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function ()){
     Highcharts.chart('barChart', {
         chart: {
             type: 'bar'
@@ -22,4 +22,4 @@ document.addEventListener('DOMContentLoaded', function () {
             data: [5, 7, 3]
         }],
     });
-});
+};
