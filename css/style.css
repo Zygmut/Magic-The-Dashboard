@@ -1,4 +1,28 @@
+/* FONTS */
+
+/* https://www.urbanfonts.com/fonts/Magic:_the_Gathering.font */
+@font-face {
+  font-family: magic;
+  src: url(../assets/fonts/MAGIC.TTF) format("truetype");
+}
+
+/* https://www.fontspace.com/planewalker-dings-font-f20370 */
+@font-face {
+  font-family: symbol;
+  src: url(../assets/fonts/Symbols.ttf) format("truetype");
+}
+
+.magic {
+  font-family: magic;
+}
+
+.symbol {
+  font-family: symbol;
+}
+
+
 body {
+  /* Nav bar working */
   min-height: 75rem;
   padding-top: 4.5rem;
 }
