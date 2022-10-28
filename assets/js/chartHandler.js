@@ -8,39 +8,37 @@ async function call(query) {
   return response.json();
 }
 
-const colors = ["B", "W", "U", "R", "G", "N"];
+const colors = ["N", "B", "G", "R", "U", "W"];
 
 /* Get count of cards of specified color within:
-    - B: Black
-    - W: White
-    - U: Blue
-    - R: Red
-    - G: Green
     - N: No-color
+    - B: Black
+    - G: Green
+    - R: Red
+    - U: Blue
+    - W: White
 */
-async function getCardCountByColor() {
+async function getCardDist() {
   //Call
-  const query =
-    "SELECT Card.colorIdentity as ColorIdentity, COUNT\(Card.id\) AS numCards FROM Card GROUP BY Card.colorIdentity;";
-    let data = await call(query);
-  return data;
+  let data = await call(
+    "SELECT Card.colorIdentity as Color, COUNT(Card.id) AS numCards FROM Card GROUP BY Color;"
+  );
+
+  let total_cards = 0;
+  data.forEach((elem) => (total_cards += parseInt(elem["numCards"])));
+  data.forEach(
+    (elem) =>
+      (elem["numCards"] = (parseInt(elem["numCards"]) / total_cards) * 100)
+  );
+
+  return {
+    N: data[0]["numCards"],
+    B: data[1]["numCards"],
+    G: data[2]["numCards"],
+    R: data[3]["numCards"],
+    U: data[4]["numCards"],
+    W: data[5]["numCards"],
+  };
 }
 
-async function getNumberOfCards() {
-  //Call
-  const query = "SELECT COUNT\(Card.id\) FROM Card;";
-  let data = await call(query);
-  return data;
-}
-
-async function getCardColorPercentile(color) {
-  //Error management
-  if (!(color in colors)) {
-    throw new Error("Error in query: Color introduced is unknown");
-  }
-
-  //Call
-  return null;
-}
-
-getCardCountByColor().then((data) => manaDist(data));
+getCardDist().then((data) => manaDist(data));

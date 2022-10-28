@@ -1,5 +1,5 @@
-function manaDist(jsonData) {
-    console.log(jsonData);
+function manaDist(data) {
+
   Highcharts.chart("manaDist", {
     chart: {
       type: "pie",
@@ -38,32 +38,32 @@ function manaDist(jsonData) {
         data: [
           {
             name: "Black",
-            y: 1,
+            y: data.B,
             color: "#101010",
           },
           {
             name: "Blue",
-            y: 1,
+            y: data.U,
             color: "#0280B7",
           },
           {
             name: "White",
-            y: 1,
+            y: data.W,
             color: "#F3F1DD",
           },
           {
             name: "Green",
-            y: 1,
+            y: data.G,
             color: "#017C45",
           },
           {
             name: "Red",
-            y: 1,
+            y: data.R,
             color: "#F95454",
           },
           {
             name: "None",
-            y: 1,
+            y: data.N,
             color: "#828282",
           },
         ],
