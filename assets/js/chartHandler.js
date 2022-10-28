@@ -31,9 +31,55 @@ async function getCardDist() {
   };
 }
 
-async function getCostDist() {return "costDist"}
+async function getCostDist() {
+  // Data
+  let data = await call(
+    "SELECT COUNT(id) as numCards FROM card GROUP BY CAST(cmc AS FLOAT)"
+  );
 
-async function getPTDist() {return "ptDist"}
+  let parsed_data = [];
+  data.forEach((elem) => parsed_data.push(parseInt(elem["numCards"])));
+
+  // Labels
+  let labels = await call(
+    "SELECT Card.cmc as cmc FROM Card GROUP BY CAST(cmc AS FLOAT)"
+  );
+
+  let parsed_labels = [];
+  labels.forEach((data) => {
+    if (data["cmc"] == "") {
+      data["cmc"] = 0;
+    } else {
+      data["cmc"] = parseFloat(data["cmc"]);
+    }
+    parsed_labels.push(data["cmc"]);
+  });
+
+  return {
+    data: parsed_data,
+    labels: parsed_labels,
+  };
+}
+
+async function getPTDist() {
+  let data = await call(
+    "SELECT COUNT(id) as numCards, SUM(Card.power) AS totalPower, SUM(Card.toughness) AS totalToughness FROM card GROUP BY card.colorIdentity"
+  );
+  return {
+    NP: data[0]["totalPower"] / data[0]["numCards"],
+    NT: data[0]["totalToughness"] / data[0]["numCards"],
+    BP: data[1]["totalPower"] / data[1]["numCards"],
+    BT: data[1]["totalToughness"] / data[1]["numCards"],
+    GP: data[2]["totalPower"] / data[2]["numCards"],
+    GT: data[2]["totalToughness"] / data[2]["numCards"],
+    RP: data[3]["totalPower"] / data[3]["numCards"],
+    RT: data[3]["totalToughness"] / data[3]["numCards"],
+    UP: data[4]["totalPower"] / data[4]["numCards"],
+    UT: data[4]["totalToughness"] / data[4]["numCards"],
+    WP: data[5]["totalPower"] / data[5]["numCards"],
+    WT: data[5]["totalToughness"] / data[5]["numCards"],
+  };
+}
 
 getCardDist().then((data) => manaDistChart(data));
 getCostDist().then((data) => costDistChart(data));
