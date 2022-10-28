@@ -1,4 +1,4 @@
-function manaDist(data) {
+function manaDistChart(data) {
 
   Highcharts.chart("manaDist", {
     chart: {

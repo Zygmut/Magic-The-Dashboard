@@ -8,16 +8,6 @@ async function call(query) {
   return response.json();
 }
 
-const colors = ["N", "B", "G", "R", "U", "W"];
-
-/* Get count of cards of specified color within:
-    - N: No-color
-    - B: Black
-    - G: Green
-    - R: Red
-    - U: Blue
-    - W: White
-*/
 async function getCardDist() {
   //Call
   let data = await call(
@@ -41,4 +31,10 @@ async function getCardDist() {
   };
 }
 
-getCardDist().then((data) => manaDist(data));
+async function getCostDist() {return "costDist"}
+
+async function getPTDist() {return "ptDist"}
+
+getCardDist().then((data) => manaDistChart(data));
+getCostDist().then((data) => costDistChart(data));
+getPTDist().then((data) => ptDistChart(data));
