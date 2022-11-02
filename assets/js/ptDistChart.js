@@ -1,6 +1,4 @@
 function ptDistChart(data) {
-  console.log(data);
-
   Highcharts.chart("ptDist", {
     chart: {
       type: "bar",
@@ -34,7 +32,7 @@ function ptDistChart(data) {
     tooltip: {
       headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
       pointFormat:
-        '<b>{point.y:.2f}%</b><br/>',
+        '<b>{point.y:.2f}</b><br/>',
     },
 
     legend: {

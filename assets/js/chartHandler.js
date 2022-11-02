@@ -1,4 +1,5 @@
 async function call(query) {
+  console.log(query);
   let url = "./assets/php/query.php?q=" + query;
   const response = await fetch(url);
   if (!response.ok) {

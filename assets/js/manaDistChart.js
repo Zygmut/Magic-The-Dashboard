@@ -1,5 +1,4 @@
 function manaDistChart(data) {
-
   Highcharts.chart("manaDist", {
     chart: {
       type: "pie",

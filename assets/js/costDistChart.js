@@ -1,7 +1,4 @@
 function costDistChart(data) {
-  console.log("costCHART");
-  console.log(data);
-
   Highcharts.chart("costDist", {
     title: {
       align: "left",
