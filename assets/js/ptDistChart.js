@@ -4,6 +4,7 @@ function ptDistChart(data) {
       type: "bar",
     },
     title: {
+      align: "left",
       text: "Power & Toughness Distribution by Mana ",
     },
     xAxis: {
@@ -12,7 +13,7 @@ function ptDistChart(data) {
     yAxis: {
       min: 0,
       title: {
-        text: "Color",
+        text: "Mana cost",
         align: "high"
       },
       labels: {

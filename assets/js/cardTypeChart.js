@@ -1,52 +1,53 @@
-function costDistChart(data) {
-  Highcharts.chart("costDist", {
+function cardTypeChart(data) {
+  Highcharts.chart("cardType", {
+    chart: {
+      type: "bar",
+    },
     title: {
       align: "left",
-      text: "Cards per Mana Cost",
+      text: "Card Types",
     },
-
     accessibility: {
       announceNewData: {
         enabled: true,
       },
     },
-
     xAxis: {
       categories: data.labels,
-      crosshair: true,
     },
-
-    yAxis:{
+    yAxis: {
+      min: 0,
       title: {
         text: "Number of cards",
-        align: "high"
+        align: "high",
       },
       labels: {
         overflow: "justify",
       },
     },
 
-    tooltip: {
-      shared: true,
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true,
+          format: "{point.y:.2f}",
+        },
+      },
     },
 
     legend: {
       enabled: false,
     },
-
-    plotOptions: {
-      series: {
-        borderWidth: 0,
-        dataLabels: {
-          enabled: true,
-        },
-      },
+    tooltip: {
+      shared: true,
     },
 
+    credits: {
+      enabled: false,
+    },
     series: [
       {
         name: "Number of cards",
-        type: "column",
         data: data.data,
       },
     ],

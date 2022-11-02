@@ -1,5 +1,4 @@
 async function call(query) {
-  console.log(query);
   let url = "./assets/php/query.php?q=" + query;
   const response = await fetch(url);
   if (!response.ok) {
@@ -82,6 +81,47 @@ async function getPTDist() {
   };
 }
 
+async function getCardTypesDist() {
+  // Get card types
+  let labels = await call(
+    "SELECT card.types AS type FROM card GROUP BY (card.types);"
+  );
+
+  let parsed_labels = [];
+  labels.forEach((elem) => parsed_labels.push(elem["type"]));
+
+  // Get distribution
+  let data = await call("SELECT COUNT(card.id) AS numCards FROM card GROUP BY (card.types);");
+
+  let parsed_data = [];
+  data.forEach((elem) => parsed_data.push(parseInt(elem["numCards"])));
+  // Return value
+  return { data: parsed_data, labels: parsed_labels };
+}
+
+async function getCardRarityDist() {
+  // Get card types
+  let labels = await call(
+    "SELECT Card.rarity as rarity FROM Card GROUP BY rarity"
+  );
+
+  let parsed_labels = [];
+  labels.forEach((elem) => parsed_labels.push(elem["rarity"]));
+
+  // Get distribution
+  let data = await call(
+    "SELECT COUNT(id) as numCards FROM Card GROUP BY rarity"
+  );
+
+  let parsed_data = [];
+  data.forEach((elem) => parsed_data.push(parseInt(elem["numCards"])));
+
+  // Return value
+  return { data: parsed_data, labels: parsed_labels };
+}
+
 getCardDist().then((data) => manaDistChart(data));
 getCostDist().then((data) => costDistChart(data));
 getPTDist().then((data) => ptDistChart(data));
+getCardTypesDist().then((data) => cardTypeChart(data));
+getCardRarityDist().then((data) => cardRarityChart(data));
