@@ -14,12 +14,19 @@ function costDistChart(data) {
     xAxis: {
       categories: data.labels,
       crosshair: true,
+      title: {
+        text: "Mana Cost",
+        align: "high",
+      },
+      labels: {
+        overflow: "justify",
+      },
     },
 
-    yAxis:{
+    yAxis: {
       title: {
         text: "Number of cards",
-        align: "high"
+        align: "high",
       },
       labels: {
         overflow: "justify",
@@ -28,6 +35,8 @@ function costDistChart(data) {
 
     tooltip: {
       shared: true,
+      headerFormat:
+        '<span style="font-size:11px">Mana cost of {point.x}</span><br>',
     },
 
     legend: {

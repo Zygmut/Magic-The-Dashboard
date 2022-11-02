@@ -40,8 +40,8 @@ function ptDistChart(data) {
       layout: "vertical",
       align: "right",
       verticalAlign: "top",
-      x: -40,
-      y: 80,
+      x: 1,
+      y: 50,
       floating: true,
       borderWidth: 1,
       backgroundColor:
