@@ -1,4 +1,5 @@
 function manaDistChart(data) {
+
   Highcharts.chart("manaDist", {
     chart: {
       type: "pie",
@@ -26,19 +27,20 @@ function manaDistChart(data) {
     },
 
     tooltip: {
-      headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+      headerFormat: '<span style="font-size:11px;">{series.name} </span><br>',
       pointFormat:
-        '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>',
+        '<span style="color:{point.color} font-size:50px">{point.name} mana</span>: <b>{point.y:.2f}%</b> of total<br/>',
     },
 
     series: [
       {
-        name: "Browsers",
+        name: "",
         data: [
           {
             name: "Black",
             y: data.B,
             color: colorPalette.B,
+            dataLabels: {style: {}}
           },
           {
             name: "Blue",
@@ -61,7 +63,7 @@ function manaDistChart(data) {
             color: colorPalette.R,
           },
           {
-            name: "None",
+            name: "Colorless",
             y: data.N,
             color: colorPalette.N,
 
