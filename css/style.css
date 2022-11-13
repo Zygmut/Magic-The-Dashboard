@@ -20,6 +20,17 @@
   font-family: symbol;
 }
 
+/* COLORS */
+:root {
+  --primary: rgb(17, 17, 27);
+  --secondary: rgb(147, 153, 178);
+  --black: rgb(30, 30, 46);
+  --gray: rgb(127, 132, 156);
+  --blue: rgb(137, 180, 250);
+  --green: rgb(166, 227, 161);
+  --yellow: rgb(249, 226, 175);
+  --red: rgb(243, 139, 168);
+}
 
 body {
   /* Nav bar working */
@@ -29,4 +40,12 @@ body {
 
 main {
   margin: 0px;
+}
+
+.navbar {
+background-color: var(--primary);
+}
+
+.secondary-bg {
+  background-color: var(--black);
 }
