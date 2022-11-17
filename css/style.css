@@ -23,7 +23,7 @@
 /* COLORS */
 :root {
   --primary: rgb(17, 17, 27);
-  --secondary: rgb(147, 153, 178);
+  --secondary: rgb(224, 227, 240);
   --black: rgb(30, 30, 46);
   --gray: rgb(127, 132, 156);
   --blue: rgb(137, 180, 250);
@@ -34,18 +34,30 @@
 
 body {
   /* Nav bar working */
-  min-height: 75rem;
   padding-top: 4.5rem;
+  margin: 0;
 }
 
 main {
-  margin: 0px;
+  position: absolute;
+  top: 53%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .navbar {
-background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .secondary-bg {
   background-color: var(--black);
+}
+
+.card-shadow {
+  box-shadow: 0 0px 15px 5px rgba(255, 255, 255, 0.2);
+}
+
+
+.card-element {
+  padding: 5px;
 }

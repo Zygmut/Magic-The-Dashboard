@@ -2,6 +2,7 @@ function ptDistChart(data) {
   Highcharts.chart("ptDist", {
     chart: {
       type: "bar",
+      backgroundColor: colorPalette.BG,
     },
     title: {
       align: "left",

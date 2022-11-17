@@ -5,5 +5,5 @@ const colorPalette = {
   R: "#f38ba8",
   U: "#89b4fa",
   W: "#f9e2af",
-  BG: "#9399b2"
+  BG: "rgb(224, 227, 240)",
 };

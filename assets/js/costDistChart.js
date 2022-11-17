@@ -5,6 +5,10 @@ function costDistChart(data) {
       text: "Cards per Mana Cost",
     },
 
+    chart:{
+      backgroundColor: colorPalette.BG,
+    },
+
     accessibility: {
       announceNewData: {
         enabled: true,

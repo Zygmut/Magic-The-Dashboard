@@ -3,6 +3,7 @@ function manaDistChart(data) {
   Highcharts.chart("manaDist", {
     chart: {
       type: "pie",
+      backgroundColor: colorPalette.BG,
     },
     title: {
       text: "Mana Distribution",

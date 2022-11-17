@@ -1,6 +1,7 @@
 function cardRarityChart(data) {
   Highcharts.chart("cardRarity", {
     chart: {
+      backgroundColor: colorPalette.BG,
       type: "bar",
     },
     title: {

@@ -2,6 +2,7 @@ function cardTypeChart(data) {
   Highcharts.chart("cardType", {
     chart: {
       type: "bar",
+      backgroundColor: colorPalette.BG,
     },
     title: {
       align: "left",
