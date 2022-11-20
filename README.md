@@ -41,3 +41,7 @@ HTML and CSS hold the usual meaning, document strucutre and style. The only thin
 ## Contributing
 
 Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/zygmut/magic-the-dashboard/compare/).
+
+## Video
+
+We made a quick video to overview the webpage and design options. The video can be found [here](https://youtu.be/kanR4kpMhE4)
