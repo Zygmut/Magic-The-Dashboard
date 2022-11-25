@@ -8,6 +8,8 @@ A dashboard to know every detail of your Magic the Gathering collection
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
+- [Benchmarks](#benchmarks)
+- [Video](#video)
 
 ## Installation
 
@@ -41,6 +43,12 @@ HTML and CSS hold the usual meaning, document strucutre and style. The only thin
 ## Contributing
 
 Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/zygmut/magic-the-dashboard/compare/).
+
+## Benchmarks
+
+To assert that the page is accesible and performace friendly we used [lighthouse](https://web.dev/performance-scoring/). This is the score :
+
+![Ligthouse score](https://i.imgur.com/T0IzZcQ.png)
 
 ## Video
 
